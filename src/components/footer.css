@@ -1,0 +1,88 @@
+.footer {
+  background-color: #212741; /* Cor alterada */
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Colunas */
+.footer-column h3,
+.footer-column h4 {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.footer-column p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ff9800;
+}
+
+/* Redes sociais - apenas na coluna de contatos, centralizada */
+.footer-column .social-icons {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 15px;
+  margin-top: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-column .social-icons li a {
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-column .social-icons li a:hover {
+  color: #ff9800;
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-column .social-icons {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo com Fundo Transparente</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            color: #ecf0f1;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(44, 62, 80, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #f39c12;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .description {
+            color: #bdc3c7;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .logo-container {
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo-preview {
+            display: inline-block;
+            background-image: 
+                linear-gradient(45deg, #34495e 25%, transparent 25%), 
+                linear-gradient(-45deg, #34495e 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #34495e 75%), 
+                linear-gradient(-45deg, transparent 75%, #34495e 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .logo {
+            width: 244px;
+            height: 80px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .logo-content {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .orange-t {
+            font-size: 54px;
+            font-weight: 900;
+            color: #f39c12;
+            margin-right: 5px;
+            text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px rgba(243, 156, 18, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(243, 156, 18, 0.8); }
+            100% { text-shadow: 0 0 10px rgba(243, 156, 18, 0.5); }
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .logo-text-ten {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+        .logo-text-subtitle {
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            color: white;
+            font-weight: 500;
+        }
+        .background-checker {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .background-checker label {
+            margin-right: 10px;
+            color: #bdc3c7;
+        }
+        #bgSelect {
+            background: #2c3e50;
+            color: white;
+            border: 1px solid #3a546b;
+            padding: 8px 15px;
+            border-radius: 5px;
+            outline: none;
+        }
+        #bgSelect:focus {
+            border-color: #f39c12;
+        }
+        .download-btn {
+            background: linear-gradient(to right, #f39c12, #e67e22);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+        }
+        .instructions {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 35px;
+            text-align: left;
+            border-left: 4px solid #f39c12;
+        }
+        .instructions h3 {
+            color: #f39c12;
+            margin-top: 0;
+        }
+        .instructions p {
+            margin-bottom: 10px;
+            color: #bdc3c7;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .success-message {
+            display: none;
+            background: rgba(46, 204, 113, 0.2);
+            color: #27ae60;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border-left: 4px solid #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logo com Fundo Transparente</h1>
+        
+        <p class="description">Sua logo com texto branco, "T" laranja destacado e mantendo a palavra "TEN" completa:</p>
+        
+        <div class="logo-container">
+            <div class="logo-preview">
+                <div class="logo">
+                    <div class="logo-content">
+                        <div class="orange-t">T</div>
+                        <div class="logo-text">
+                            <div class="logo-text-ten">TEN</div>
+                            <div class="logo-text-subtitle">TechNunes Soluções em TI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="background-checker">
+                <label>Visualizar sobre fundo:</label>
+                <select id="bgSelect" onchange="changeBackground()">
+                    <option value="transparent">Transparente</option>
+                    <option value="white">Branco</option>
+                    <option value="black">Preto</option>
+                    <option value="blue">Azul</option>
+                    <option value="gradient">Gradiente</option>
+                </select>
+            </div>
+        </div>
+        
+        <button class="download-btn" onclick="downloadLogo()">
+            📥 Download da Logo
+        </button>
+        
+        <div id="successMessage" class="success-message">
+            Logo baixada com sucesso! Verifique sua pasta de downloads.
+        </div>
+        
+        <div class="instructions">
+            <h3>Instruções de Uso:</h3>
+            <p>1. Visualize a logo sobre diferentes fundos usando o seletor acima</p>
+            <p>2. Clique no botão "Download da Logo" para baixar a imagem em PNG</p>
+            <p>3. A imagem baixada terá fundo transparente e dimensões de 244x80 pixels</p>
+        </div>
+        
+        <div class="footer">
+            <p>Logo personalizada para TechNunes Soluções em TI</p>
+        </div>
+    </div>
+
+    <script>
+        function changeBackground() {
+            const select = document.getElementById('bgSelect');
+            const logoPreview = document.querySelector('.logo-preview');
+            
+            switch(select.value) {
+                case 'transparent':
+                    logoPreview.style.backgroundImage = 
+                        'linear-gradient(45deg, #34495e 25%, transparent 25%), ' +
+                        'linear-gradient(-45deg, #34495e 25%, transparent 25%), ' +
+                        'linear-gradient(45deg, transparent 75%, #34495e 75%), ' +
+                        'linear-gradient(-45deg, transparent 75%, #34495e 75%)';
+                    logoPreview.style.backgroundColor = 'transparent';
+                    break;
+                case 'white':
+                    logoPreview.style.backgroundImage = 'none';
+                    logoPreview.style.backgroundColor = '#ffffff';
+                    break;
+                case 'black':
+                    logoPreview.style.backgroundImage = 'none';
+                    logoPreview.style.backgroundColor = '#000000';
+                    break;
+                case 'blue':
+                    logoPreview.style.backgroundImage = 'none';
+                    logoPreview.style.backgroundColor = '#3498db';
+                    break;
+                case 'gradient':
+                    logoPreview.style.backgroundImage = 'linear-gradient(to right, #3498db, #9b59b6)';
+                    logoPreview.style.backgroundColor = 'transparent';
+                    break;
+            }
+        }
+        
+        function downloadLogo() {
+            // Criar um canvas para converter a logo em imagem
+            const canvas = document.createElement('canvas');
+            canvas.width = 244;
+            canvas.height = 80;
+            const ctx = canvas.getContext('2d');
+            
+            // Manter o fundo transparente
+            ctx.clearRect(0, 0, 244, 80);
+            
+            // Desenhar o "T" laranja destacado (centralizado verticalmente)
+            ctx.font = 'bold 54px Arial';
+            ctx.fillStyle = '#f39c12';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('T', 15, 40);
+            
+            // Texto "TEN" completo (centralizado verticalmente)
+            ctx.font = 'bold 32px Arial';
+            ctx.fillStyle = 'white';
+            ctx.fillText('TEN', 65, 30);
+            
+            // Texto "TechNunes Soluções em TI" (centralizado verticalmente)
+            ctx.font = '12px Arial';
+            ctx.fillText('TechNunes Soluções em TI', 65, 50);
+            
+            // Criar link de download
+            const link = document.createElement('a');
+            link.download = 'logo_tech_nunes.png';
+            link.href = canvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Mostrar mensagem de sucesso
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Esconder a mensagem após 3 segundos
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        }
+
+        // Inicializar a visualização com fundo transparente
+        window.onload = function() {
+            changeBackground();
+        };
+    </script>
+</body>
+</html>

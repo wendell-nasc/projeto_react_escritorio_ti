@@ -1,10 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { servicesData as defaultServicesData } from "../data/servicesData";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Header = ({ servicesData = defaultServicesData }) => {
   const location = useLocation();
   const isHome = location.pathname === "/home";
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,21 +21,35 @@ const Header = ({ servicesData = defaultServicesData }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="header-area header-sticky">
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <nav className="main-nav">
+            <nav className={`main-nav ${menuOpen ? "active" : ""}`}>
               {/* Logo */}
               <Link to="/home" className="logo">
                 <img src="/assets/images/logo.png" alt="Logo" />
               </Link>
 
               {/* Menu */}
-              <ul className="nav">
-                {/* Home */}
-                <li className="scroll-to-section">
+              <ul className="nav" 
+              // style={{ display: menuOpen ? "block" : "" }}
+              style={{
+                display: menuOpen ? "block" : "",
+                backgroundColor: menuOpen ? "#1b1b1b" : "transparent",
+                padding: menuOpen ? "20px 0" : "0",
+              }}
+              >
+                <li className="scroll-to-section" onClick={handleLinkClick}>
                   {isHome ? (
                     <a href="#top" className="active">Home</a>
                   ) : (
@@ -42,8 +57,7 @@ const Header = ({ servicesData = defaultServicesData }) => {
                   )}
                 </li>
 
-                {/* Services */}
-                <li className="scroll-to-section">
+                <li className="scroll-to-section" onClick={handleLinkClick}>
                   {isHome ? (
                     <a href="#services">Services</a>
                   ) : (
@@ -53,8 +67,7 @@ const Header = ({ servicesData = defaultServicesData }) => {
                   )}
                 </li>
 
-                {/* About */}
-                <li className="scroll-to-section">
+                <li className="scroll-to-section" onClick={handleLinkClick}>
                   {isHome ? (
                     <a href="#about">About</a>
                   ) : (
@@ -62,8 +75,7 @@ const Header = ({ servicesData = defaultServicesData }) => {
                   )}
                 </li>
 
-                {/* Dropdown Pages */}
-                <li className="has-sub">
+                <li className="has-sub" onClick={handleLinkClick}>
                   <a href="javascript:void(0)">Pages</a>
                   <ul className="sub-menu">
                     <li><Link to="/about">About Us</Link></li>
@@ -72,8 +84,7 @@ const Header = ({ servicesData = defaultServicesData }) => {
                   </ul>
                 </li>
 
-                {/* Testimonials */}
-                <li className="scroll-to-section">
+                <li className="scroll-to-section" onClick={handleLinkClick}>
                   {isHome ? (
                     <a href="#testimonials">Testimonials</a>
                   ) : (
@@ -81,14 +92,16 @@ const Header = ({ servicesData = defaultServicesData }) => {
                   )}
                 </li>
 
-                {/* Contact */}
-                <li>
+                <li onClick={handleLinkClick}>
                   <Link to="/contact-us">Contact Support</Link>
                 </li>
               </ul>
 
-              {/* Mobile menu trigger */}
-              <a className="menu-trigger">
+              {/* Mobile Menu Trigger */}
+              <a
+                className={`menu-trigger ${menuOpen ? "active" : ""}`}
+                onClick={handleMenuToggle}
+              >
                 <span>Menu</span>
               </a>
             </nav>

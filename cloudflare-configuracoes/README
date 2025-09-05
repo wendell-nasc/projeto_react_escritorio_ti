@@ -1,0 +1,83 @@
+# CONFIGURACOES DO TUNEL CLOUDFLARE
+nano ~/.cloudflared/config.yml
+
+tunnel: itwns99
+
+credentials-file: /home/wendell/.cloudflared/8dfa0d38-c721-4c7f-bdff-ef66aa29ce23.json
+
+ingress:
+ # PRINCIPAL
+  - hostname: itwns.shop
+    service: http://192.168.1.157:8000
+
+ # SITE EDVAN
+  - hostname: technunes.itwns.shop
+    service: http://localhost:5000
+
+  # HTTP app
+  - hostname: www.itwns.shop
+    service: http://localhost:8080
+
+  # Mail - SMTP
+  - hostname: smtp.itwns.shop
+    service: tcp://localhost:25
+
+
+
+# Verificar o arquivo de credenciais CLOUDFLARE
+ls -lh ~/.cloudflared
+Você deve ver um arquivo parecido com:
+
+8dfa0d38-c721-4c7f-bdff-ef66aa29ce23.json
+
+Se ele não existir, refaça o login:
+
+cloudflared tunnel login
+
+
+E então associe o túnel novamente:
+
+cloudflared tunnel run itwns99
+
+
+
+# PRECISA CRIAR O CNAME E CONFIGURAR COM MESMO TXT GERADO PELA CONEXAO DO TUNE
+https://dash.cloudflare.com/
+ex.: technunes + 8dfa0d38-c721-4c7f-bdff-ef66aa29ce23.cfargotunnel.com
+
+
+
+
+
+
+# CRIAR O SERVICO PARA RODAR O TUNEL:
+sudo nano /etc/systemd/system/cloudflared.service
+
+
+[Unit]
+Description=Cloudflare Tunnel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+TimeoutStartSec=0
+Type=notify
+ExecStart=/usr/local/bin/cloudflared tunnel run itwns99
+Restart=on-failure
+RestartSec=5s
+User=wendell
+Environment=HOME=/home/wendell
+WorkingDirectory=/home/wendell/.cloudflared
+
+[Install]
+WantedBy=multi-user.target
+
+
+# Recarregar e reiniciar o serviço
+sudo systemctl daemon-reload
+sudo systemctl enable cloudflared
+sudo systemctl restart cloudflared
+sudo systemctl status cloudflared
+
+# Ver logs detalhados
+journalctl -u cloudflared -n 50 --no-pager

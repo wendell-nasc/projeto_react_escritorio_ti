@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import "./Services.css";
+// import "./Services.css";
 
 const Services = ({ services: propsServices }) => {
   // Recebe services via prop ou via location.state (Link)

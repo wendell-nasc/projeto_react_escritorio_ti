@@ -1,80 +1,62 @@
 class MeuWidget extends HTMLElement {
   connectedCallback() {
-    // Criar Shadow DOM para isolar o conteúdo
+    // Criar Shadow DOM
     const shadow = this.attachShadow({ mode: "open" });
 
-    // Criar container principal
-    // const container = document.createElement("div");
-    // container.innerHTML = `
-    //   <div id="widget-container">
-    //     <input type="text" id="data" placeholder="Escolha uma data" />
-    //     <button id="btn-alerta">Clique aqui</button>
-    //   </div>
-    // `;
+    // Container do widget
+    const container = document.createElement("div");
+    container.innerHTML = `
+      <div id="widget-container">
+        <input type="text" id="data" placeholder="Escolha uma data" />
+        <button id="btn-alerta">Clique aqui</button>
+      </div>
+    `;
+    shadow.appendChild(container);
 
-    // // Adiciona o container ao shadow DOM
-    // shadow.appendChild(container);
-
-    // Carrega dinamicamente o jQuery, jQuery UI e os arquivos antigos
-    const scripts = [      
-
-      "/vendor/jquery/jquery.min.js",
-      // "/vendor/bootstrap/js/bootstrap.bundle.min.js",
-
-
-      
+    // Scripts que dependem de jQuery e outros
+    const scripts = [
       "/assets/js/isotope.js",
       "/assets/js/isotope.min.js",
       "/assets/js/custom.js",
-      
       "/assets/js/swiper.js",
       "/assets/js/swiper_script.js",
-
-      
       "/assets/js/tabs.js",
-      "/assets/js/video.js",
-      
-
-
-      
+      "/assets/js/video.js"
     ];
 
-    // Função para carregar scripts na ordem correta
     const carregarScripts = (lista, callback) => {
       let i = 0;
-
       const carregar = () => {
         if (i < lista.length) {
           const script = document.createElement("script");
           script.src = lista[i];
-          script.onload = () => {
-            i++;
-            carregar();
-          };
+          script.onload = () => { i++; carregar(); };
           shadow.appendChild(script);
         } else {
           callback();
         }
       };
-
       carregar();
     };
 
-    // Inicializa scripts antigos após carregar todos
+    // Inicializar scripts
     carregarScripts(scripts, () => {
-      // Aqui o jQuery está disponível
       const $ = window.jQuery;
 
-      // Exemplo: aplica datepicker
-      $(shadow.querySelector("#data")).datepicker();
+      if ($ && $.fn.datepicker) {
+        $(shadow.querySelector("#data")).datepicker();
+      }
 
-      // Exemplo: botão com evento jQuery
       $(shadow.querySelector("#btn-alerta")).click(() => {
         alert("Botão clicado com sucesso!");
       });
+
+      // Inicializar Owl Carousel se existir
+      if ($ && $.fn.owlCarousel) {
+        $(shadow).find(".owl-carousel").owlCarousel();
+      }
     });
   }
 }
 
-// Define o Web Component
 customElements.define("meu-widget", MeuWidget);

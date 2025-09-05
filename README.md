@@ -14,3 +14,6 @@ git push -u origin main
 git remote add origin git@github.com:wendell-nasc/projeto_react_escritorio_ti.git
 git branch -M main
 git push -u origin main
+
+
+git pull -u origin main

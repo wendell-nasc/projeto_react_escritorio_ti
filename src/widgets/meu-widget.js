@@ -5,16 +5,20 @@ class MeuWidget extends HTMLElement {
 
     // Container do widget
     // const container = document.createElement("div");
+    // container.id = "widget-container";
     // container.innerHTML = `
-    //   <div id="widget-container">
-    //     <input type="text" id="data" placeholder="Escolha uma data" />
-    //     <button id="btn-alerta">Clique aqui</button>
+    //   <input type="text" id="data" placeholder="Escolha uma data" />
+    //   <button id="btn-alerta">Clique aqui</button>
+    //   <div class="owl-carousel">
+    //     <div>Slide 1</div>
+    //     <div>Slide 2</div>
+    //     <div>Slide 3</div>
     //   </div>
     // `;
     // shadow.appendChild(container);
 
-    // Scripts que dependem de jQuery e outros
-    const scripts = [
+    // Scripts externos que dependem de jQuery ou outros
+    const scripts = [      
       "/assets/js/isotope.js",
       "/assets/js/isotope.min.js",
       "/assets/js/custom.js",
@@ -22,6 +26,7 @@ class MeuWidget extends HTMLElement {
       "/assets/js/swiper_script.js",
       "/assets/js/tabs.js",
       "/assets/js/video.js"
+
     ];
 
     const carregarScripts = (lista, callback) => {
@@ -31,6 +36,7 @@ class MeuWidget extends HTMLElement {
           const script = document.createElement("script");
           script.src = lista[i];
           script.onload = () => { i++; carregar(); };
+          script.onerror = () => { i++; carregar(); }; // ignora erros
           shadow.appendChild(script);
         } else {
           callback();
@@ -39,24 +45,29 @@ class MeuWidget extends HTMLElement {
       carregar();
     };
 
-    // Inicializar scripts
+    // Inicializar scripts após carregar
     carregarScripts(scripts, () => {
       const $ = window.jQuery;
 
-      if ($ && $.fn.datepicker) {
-        $(shadow.querySelector("#data")).datepicker();
-      }
+      if ($) {
+        // Inicializar datepicker
+        if ($.fn.datepicker) {
+          $(shadow.querySelector("#data")).datepicker();
+        }
 
-      $(shadow.querySelector("#btn-alerta")).click(() => {
-        alert("Botão clicado com sucesso!");
-      });
+        // Botão de alerta
+        $(shadow.querySelector("#btn-alerta")).click(() => {
+          alert("Botão clicado com sucesso!");
+        });
 
-      // Inicializar Owl Carousel se existir
-      if ($ && $.fn.owlCarousel) {
-        $(shadow).find(".owl-carousel").owlCarousel();
+        // Owl Carousel
+        if ($.fn.owlCarousel) {
+          $(shadow.querySelector(".owl-carousel")).owlCarousel();
+        }
       }
     });
   }
 }
 
+// Registrar Web Component
 customElements.define("meu-widget", MeuWidget);

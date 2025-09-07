@@ -11,13 +11,6 @@ import Footer from "./components/Footer";
 const App = () => {
 
 
-  useEffect(() => {
-    // Garante que o Web Component foi carregado
-    if (!customElements.get("meu-widget")) {
-      console.warn("⚠️ O componente <meu-widget> ainda não foi registrado!");
-    }
-  }, []);
-
   return (
     <Provider store={ store }>
       
@@ -25,10 +18,6 @@ const App = () => {
       <BrowserRouter>
       
       <Header /> 
-        {/* Web Component isolado */}
-        
-          <meu-widget></meu-widget>
-        
         <AppRouter />
       <Footer />
       </BrowserRouter>

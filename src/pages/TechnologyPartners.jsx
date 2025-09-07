@@ -9,7 +9,7 @@ const TechnologyPartners = ({ partners: propsPartners }) => {
 
   return (
     <section className="services" id="technology-partner">
-      <div class="section-heading"><h6>Parceiros</h6><h4>A EMPRESA X tem mais de 80 parceiros de tecnologia
+      <div className="section-heading"><h6>Parceiros</h6><h4>A EMPRESA X tem mais de 80 parceiros de tecnologia
 </h4></div>
       <div
         className="row g-4"

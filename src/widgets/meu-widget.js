@@ -4,14 +4,14 @@ class MeuWidget extends HTMLElement {
     const shadow = this.attachShadow({ mode: "open" });
 
     // Container do widget
-    const container = document.createElement("div");
-    container.innerHTML = `
-      <div id="widget-container">
-        <input type="text" id="data" placeholder="Escolha uma data" />
-        <button id="btn-alerta">Clique aqui</button>
-      </div>
-    `;
-    shadow.appendChild(container);
+    // const container = document.createElement("div");
+    // container.innerHTML = `
+    //   <div id="widget-container">
+    //     <input type="text" id="data" placeholder="Escolha uma data" />
+    //     <button id="btn-alerta">Clique aqui</button>
+    //   </div>
+    // `;
+    // shadow.appendChild(container);
 
     // Scripts que dependem de jQuery e outros
     const scripts = [

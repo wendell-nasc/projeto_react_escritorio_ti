@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import aboutImage from "../assets/images/about-left-image.jpg";
+import aboutImage from "/assets/images/about-left-image.jpg";
 import { Banner, CTA, AboutUs, Calculator, Testimonials, Partners } from './';
  
 

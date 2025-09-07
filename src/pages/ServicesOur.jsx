@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import serviceImg1 from "../assets/images/service-image-01.jpg";
-import serviceImg2 from "../assets/images/service-image-02.jpg";
-import serviceImg3 from "../assets/images/service-image-03.jpg";
-import detailsImg1 from "../assets/images/service-details-01.jpg";
-import detailsImg2 from "../assets/images/service-details-02.jpg";
-import detailsImg3 from "../assets/images/service-details-03.jpg";
+import serviceImg1 from "/assets/images/service-image-01.jpg";
+import serviceImg2 from "/assets/images/service-image-02.jpg";
+import serviceImg3 from "/assets/images/service-image-03.jpg";
+import detailsImg1 from "/assets/images/service-details-01.jpg";
+import detailsImg2 from "/assets/images/service-details-02.jpg";
+import detailsImg3 from "/assets/images/service-details-03.jpg";
 
 import "./Services.css"; // Usa o CSS original do template
 import { Banner, CTA, AboutUs, Calculator, Testimonials, Partners } from './';

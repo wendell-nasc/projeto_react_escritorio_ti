@@ -7,6 +7,7 @@ function AboutUs() {
     <section className="about-us" id="about">
       <div className="container">
         <div className="row">
+          
           <div className="col-lg-6 offset-lg-3">
             <div className="section-heading">
               <h6>About Us</h6>

@@ -33,6 +33,22 @@ const testimonialsData = [
 
 export default function Testimonials() {
   return (
+<>
+      {/* Cabeçalho */}
+      <div className="page-heading">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="header-text">
+                <h2>Testimonials</h2>
+                <div className="div-dec"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
     <section className="testimonials" id="testimonials">
       <div className="container">
         <div className="row">
@@ -70,5 +86,7 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
+
+    </>
   );
 }

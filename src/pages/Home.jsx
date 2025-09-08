@@ -30,7 +30,7 @@ function Home() {
       <AboutUs/>
       <Calculator />
       <TechnologyPartners partners={partnersData} />
-      <Testimonials />
+      <Testimonials id="testimonials" />
       <Partners />
       
 

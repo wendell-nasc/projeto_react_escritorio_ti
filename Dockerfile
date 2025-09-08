@@ -14,6 +14,8 @@ RUN rm -rf node_modules
 
 # Stage 2: Nginx para servir arquivos estáticos
 FROM nginx:alpine
+# Remove arquivos antigos do Nginx
+RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build /app/dist /usr/share/nginx/html
 # Copia config customizada (opcional)
 COPY nginx.conf /etc/nginx/conf.d/default.conf

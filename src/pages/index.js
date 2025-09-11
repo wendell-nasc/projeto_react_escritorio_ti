@@ -13,8 +13,12 @@ export { default as Home } from './Home';
 
 export { default as ServicesNews } from './ServicesNews';
 export { default as ServicesHome } from './ServicesHome';
+export { default as ServicesHomeDetail } from './ServicesHomeDetail';
+
+
 export { default as ServicesOld } from './old/ServicesOld';
 export { default as ServicesOur } from './ServicesOur';
+
 
 
 export { default as TechnologyPartners } from './TechnologyPartners';

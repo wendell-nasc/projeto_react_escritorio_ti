@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Spinner from './Spinner';
 
-import { Banner, ServicesNews,ServicesHome, CTA, AboutUs, Calculator, Testimonials, Partners, TechnologyPartners } from './';
+import { Banner, ServicesNews,ServicesHome, CTA, AboutUs, AboutUsPrincipal,
+  Calculator, Testimonials, Partners, TechnologyPartners } from './';
 import Services from './Services';
 import { servicesData } from "../data/servicesData";
 import { partnersData } from "../data/partnersData";
@@ -22,15 +23,16 @@ function Home() {
     <div>
       <Banner />
       {/* <Services /> */}
-      <ServicesNews />      
+      <AboutUs/>
+      {/* <ServicesNews />       */}
       {/* <Services services={servicesData}  /> */}
       <ServicesHome services={servicesData}  /> 
       
       <CTA />
-      <AboutUs/>
+      
       <Calculator />
-      <TechnologyPartners partners={partnersData} />
-      <Testimonials id="testimonials" />
+      {/* <TechnologyPartners partners={partnersData} /> */}
+      {/* <Testimonials id="testimonials" /> */}
       <Partners />
       
 

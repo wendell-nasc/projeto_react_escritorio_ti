@@ -9,67 +9,58 @@ const AboutUsPrincipal = () => {
   return (
     <div className="about-page">
       {/* Cabeçalho da página */}
+      
+    {/* Cabeçalho da página */}
       <div className="page-heading header-text">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
-              <h2>About Us</h2>
+              <h2>Sobre Nossa Empresa</h2>
               <div className="div-dec"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Seção superior com imagem + acordeão */}
+      {/* Seção superior com imagem + texto */}
       <section className="top-section section-padding">
         <div className="container">
-          <div className="row gx-4">
+          <div className="row gx-4 align-items-center">
+            
+            {/* Texto sobre a empresa */}
+            <div className="col-lg-6">
+              <div className="about-text">
+                <h4>Apresentação</h4>
+                <br />
+                <p>
+                  Somos uma empresa especializada em oferecer suporte tecnológico eficiente, ágil e personalizado para pessoas físicas e empresas.
+                </p>
+                <br />
+                <p>
+                  Atuamos com manutenção, consultoria e soluções inteligentes em tecnologia da informação, garantindo o pleno funcionamento de equipamentos e sistemas, proporcionando segurança, produtividade e inovação aos nossos clientes.
+                </p>
+                <br />
+                <br />
+                <a href="#contato" className="btn btn-primary mt-3">
+                  Saiba Mais
+                </a>
+                <br />
+                <br />
+
+                <br /><br />
+                <br />
+
+                
+              </div>
+            </div>
+
             {/* Imagem */}
             <div className="col-lg-6">
-              <div className="left-image">
+              <div className="left-image text-center">
                 <img src={aboutImage} alt="About" className="img-fluid rounded" />
               </div>
             </div>
 
-            {/* Acordeões */}
-            <div className="col-lg-6 align-self-center">
-              <div className="accordions is-first-expanded">
-                {[
-                  {
-                    title: "Mexant Financial Planning",
-                    content: `You will see a bunch of free CSS templates when you search on Google. TemplateMo website is probably the best one because it is 100% free. 
-
-                    We do not ask you anything in return. You are free to use our templates for any purpose.`,
-                  },
-                  {
-                    title: "Mexant Crypto Investing",
-                    content: `Mexant HTML5 Template is available to download 100% free of charge. This CSS layout is based on Bootstrap 5 framework.
-
-                    Anyone can edit and use this layout for all professional websites. Thank you for visiting TemplateMo website.`,
-                  },
-                  {
-                    title: "Cryptocurrency Investments",
-                    content: `Ut dictum vehicula massa, ac pharetra leo tincidunt eu. Phasellus in tristique magna, ac gravida leo.
-
-                    Integer sed lorem sapien. Ut viverra mauris sed lobortis commodo. Mauris scelerisque venenatis justo, sed interdum sem.`,
-                  },
-                ].map((item, index) => (
-                  <article className="accordion" key={index}>
-                    <div className="accordion-head">
-                      <span>{item.title}</span>
-                      <span className="icon">
-                        <i className="icon fa fa-chevron-right"></i>
-                      </span>
-                    </div>
-                    <div className="accordion-body">
-                      <div className="content">
-                        <p>{item.content}</p>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { servicesData as defaultServicesData } from "../data/servicesData";
 import { useState, useEffect } from "react";
-import "./Header.css"; // importa o CSS
+// import "./Header.css"; // importa o CSS
 
 const Header = ({ servicesData = defaultServicesData }) => {
   const location = useLocation();

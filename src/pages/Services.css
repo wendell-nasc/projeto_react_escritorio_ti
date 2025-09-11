@@ -57,3 +57,39 @@
   }
 }
 
+.service-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-img img {
+  height: 200px; /* altura uniforme para todas as imagens */
+  object-fit: cover;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  min-height: 250px; /* força todos os conteúdos a ocupar o mesmo espaço */
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.btn {
+  align-self: flex-start;
+}

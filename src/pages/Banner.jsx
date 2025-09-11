@@ -2,12 +2,51 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 
+
+
+
+
+
+
+
+
 import "swiper/css";
 import "swiper/css/navigation";
 
-function Banner() {
-  const slides = [1, 2, 3];
 
+
+
+// Array de serviços do portfólio
+const services = [
+  {
+    title: "Suporte técnico especializado",
+    description: "Oferecemos suporte especializado para computadores, notebooks e periféricos, garantindo que seus dispositivos funcionem sempre de forma eficiente.",
+    image: "/assets/images/slide-01.jpg",
+  },
+  {
+    title: "Manutenção e reparo de computadores",
+    description: "Serviços de manutenção preventiva e corretiva para computadores, notebooks e periféricos.",
+    image: "/assets/images/slide-02.jpg",
+  },
+  {
+    title: "Consultoria em Infraestrutura de TI",
+    description: "Planejamento, implementação e otimização de infraestrutura tecnológica para empresas.",
+    image: "/assets/images/slide-03.jpg",
+  },
+  {
+    title: "Criação de Sites e Aplicações Web",
+    description: "Desenvolvemos landing pages, sites institucionais, e-commerce e sistemas online personalizados.",
+    image: "/assets/images/slide-01.jpg",
+  },
+  {
+    
+    title: "Bots Automatizados e APIs",
+    description: "Automatização de tarefas com bots (Telegram, WhatsApp, Discord) e integração via APIs customizadas.",
+    image: "/assets/images/slide-02.jpg",
+  },
+];
+
+function Banner() {
   return (
     <div className="swiper-banner" id="top">
       <Swiper
@@ -24,12 +63,12 @@ function Banner() {
         speed={800}
         className="swiper-container"
       >
-        {slides.map((i) => (
-          <SwiperSlide key={i}>
+        {services.map((service, index) => (
+          <SwiperSlide key={index}>
             <div
               className="slide-inner"
               style={{
-                backgroundImage: `url(/assets/images/slide-0${i}.jpg)`,
+                backgroundImage: `url(${service.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -39,16 +78,16 @@ function Banner() {
                   <div className="col-lg-8">
                     <div className="header-text">
                       <h2>
-                        Slide {i} Title <em>with Emphasis</em>
+                        {service.title} <em>TechNunes</em>
                       </h2>
                       <div className="div-dec"></div>
-                      <p>Slide {i} content goes here...</p>
+                      <p>{service.description}</p>
                       <div className="buttons">
                         <div className="green-button">
-                          <a href="#">Discover More</a>
+                          <a href="#">Leia mais</a>
                         </div>
                         <div className="orange-button">
-                          <a href="#">Contact Us</a>
+                          <a href="#">Contato</a>
                         </div>
                       </div>
                     </div>
@@ -59,7 +98,6 @@ function Banner() {
           </SwiperSlide>
         ))}
 
-        {/* Botões de navegação */}
         <div className="swiper-button-next swiper-button-white"></div>
         <div className="swiper-button-prev swiper-button-white"></div>
       </Swiper>

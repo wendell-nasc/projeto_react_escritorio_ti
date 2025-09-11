@@ -248,6 +248,11 @@ header
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
   transition: all .5s ease 0s;
+
+  padding: 20px 40px; /* 20px cima/baixo, 40px esquerda/direita */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-area .main-nav {
@@ -267,6 +272,16 @@ header
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 20px auto; /* espaço em cima e embaixo */
 }
 
 .background-header .main-nav .logo {
@@ -329,6 +344,8 @@ header
   line-height: 25px;
   letter-spacing: 0.5px;
   transition: all .3s;
+
+  
 }
 
 .header-area .main-nav .nav li:last-child a:hover {
@@ -343,6 +360,9 @@ header
   border-radius: 0px;
   padding-top: 0px !important;
   height: 40px;
+
+  
+
 }
 
 
@@ -446,6 +466,22 @@ header
   right: 40px;
   display: none;
 }
+
+
+
+/* Logo circular dentro do header */
+.header-area.background-header .logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;       /* centraliza horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 
 .background-header .main-nav .menu-trigger {
   top: 23px;

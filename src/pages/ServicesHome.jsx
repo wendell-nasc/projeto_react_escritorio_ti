@@ -12,7 +12,9 @@ const ServicesHome = ({ services: propsServices }) => {
   
 
    return (
+
     
+
     <div className="row g-4" style={{ marginTop: "80px", padding: "0 20px" }}>
       {services.length > 0 &&
         services.map((service, index) => (

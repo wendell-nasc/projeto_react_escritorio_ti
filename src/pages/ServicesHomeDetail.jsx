@@ -40,7 +40,7 @@ const ServicesHomeDetail = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="header-text text-center">
-                <h2>{service.title}</h2>
+                <h2>Serviços</h2>
                 <div className="div-dec"></div>
               </div>
             </div>
@@ -64,8 +64,8 @@ const ServicesHomeDetail = () => {
 
             {/* Texto do serviço */}
             <div className="col-lg-6">
-              <h4 className="mb-3">{service.description}</h4>
-              {/* <p className="lead">{service.description}</p> */}
+              <h4 className="mb-3">{service.title}</h4>
+              <p className="lead">{service.description}</p>
               <p>{service.details}</p>
 
               <button className="orange-button mt-3" onClick={() => navigate(-1)}>

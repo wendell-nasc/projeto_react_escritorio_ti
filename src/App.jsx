@@ -5,6 +5,7 @@ import { store } from './store';
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FloatingButtons from "./components/FloatingButtons";
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Header /> 
         <AppRouter />
       <Footer />
+      <FloatingButtons />
       </BrowserRouter>
     </Provider>
   )

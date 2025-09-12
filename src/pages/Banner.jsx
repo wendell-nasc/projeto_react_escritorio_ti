@@ -2,46 +2,44 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 
-
-
-
-
-
-
-
-
 import "swiper/css";
 import "swiper/css/navigation";
 
 
+import "./Banner.css";
 
 
-// Array de serviços do portfólio
+
+// Serviços do portfólio
 const services = [
   {
     title: "Suporte técnico especializado",
-    description: "Oferecemos suporte especializado para computadores, notebooks e periféricos, garantindo que seus dispositivos funcionem sempre de forma eficiente.",
+    description:
+      "Oferecemos suporte especializado para computadores, notebooks e periféricos, garantindo que seus dispositivos funcionem sempre de forma eficiente.",
     image: "/assets/images/slide-01.jpg",
   },
   {
     title: "Manutenção e reparo de computadores",
-    description: "Serviços de manutenção preventiva e corretiva para computadores, notebooks e periféricos.",
+    description:
+      "Serviços de manutenção preventiva e corretiva para computadores, notebooks e periféricos.",
     image: "/assets/images/slide-02.jpg",
   },
   {
     title: "Consultoria em Infraestrutura de TI",
-    description: "Planejamento, implementação e otimização de infraestrutura tecnológica para empresas.",
+    description:
+      "Planejamento, implementação e otimização de infraestrutura tecnológica para empresas.",
     image: "/assets/images/slide-03.jpg",
   },
   {
     title: "Criação de Sites e Aplicações Web",
-    description: "Desenvolvemos landing pages, sites institucionais, e-commerce e sistemas online personalizados.",
+    description:
+      "Desenvolvemos landing pages, sites institucionais, e-commerce e sistemas online personalizados.",
     image: "/assets/images/slide-01.jpg",
   },
   {
-    
     title: "Bots Automatizados e APIs",
-    description: "Automatização de tarefas com bots (Telegram, WhatsApp, Discord) e integração via APIs customizadas.",
+    description:
+      "Automatização de tarefas com bots (Telegram, WhatsApp, Discord) e integração via APIs customizadas.",
     image: "/assets/images/slide-02.jpg",
   },
 ];
@@ -73,16 +71,16 @@ function Banner() {
                 backgroundPosition: "center",
               }}
             >
-              <div className="container">
-                <div className="row">
-                  <div className="col-lg-8">
-                    <div className="header-text">
+              <div className="container h-100">
+                <div className="row h-100 align-items-center">
+                  <div className="col-lg-8 col-md-10 col-12">
+                    <div className="header-text text-white">
                       <h2>
                         {service.title} <em>TechNunes</em>
                       </h2>
                       <div className="div-dec"></div>
                       <p>{service.description}</p>
-                      <div className="buttons">
+                      <div className="buttons d-flex flex-wrap gap-2">
                         <div className="green-button">
                           <a href="#">Leia mais</a>
                         </div>
@@ -98,6 +96,7 @@ function Banner() {
           </SwiperSlide>
         ))}
 
+        {/* Botões de navegação */}
         <div className="swiper-button-next swiper-button-white"></div>
         <div className="swiper-button-prev swiper-button-white"></div>
       </Swiper>

@@ -30,44 +30,49 @@ const ServicesHomeDetail = () => {
 
   return (
     <div className="service-detail-page">
-
-
-      {/* Cabeçalho no padrão do template */}
-
-      
-      <div className="page-heading">
+      {/* Header com imagem de fundo e título */}
+      <div
+        className="page-heading"
+        style={{
+          backgroundImage: `url(${service.image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="header-text text-center">
+              <div className="header-text text-center" style={{ color: "#fff" }}>
                 <h2>{service.title}</h2>
                 <div className="div-dec"></div>
               </div>
             </div>
           </div>
         </div>
+        {/* Overlay para dar contraste no texto */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0,0,0,0.4)",
+            zIndex: -1,
+          }}
+        ></div>
       </div>
 
       {/* Conteúdo do serviço */}
       <section className="service-content section">
         <div className="container">
           <div className="row">
-            {/* Imagem do serviço */}
-            <div className="col-lg-6">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="img-fluid rounded shadow"
-                style={{ borderRadius: "10px" }}
-              />
-            </div>
-
-            {/* Texto do serviço */}
-            <div className="col-lg-6">
-              <h4 className="mb-3">{service.description}</h4>
-              {/* <p className="lead">{service.description}</p> */}
+            <div className="col-lg-12">
+              <p className="lead">{service.description}</p>
               <p>{service.details}</p>
-
               <button className="orange-button mt-3" onClick={() => navigate(-1)}>
                 Voltar
               </button>

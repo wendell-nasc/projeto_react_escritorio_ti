@@ -33,7 +33,7 @@ function Home() {
       <Calculator />
       {/* <TechnologyPartners partners={partnersData} /> */}
       {/* <Testimonials id="testimonials" /> */}
-      <Partners />
+      {/* <Partners /> */}
       
 
       

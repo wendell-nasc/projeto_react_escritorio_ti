@@ -1,6 +1,6 @@
-/* .service-detail-page {
-  margin-top: 80px; /* espaço para o header fixo */
-} */
+.service-detail-page {
+  margin-top: 0px; /* espaço para o header fixo */
+}
 
 .service-header {
   position: relative;

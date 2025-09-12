@@ -1,17 +1,17 @@
 import React from "react";
 import "./footer.css";
+import { FaFacebook, FaTwitter, FaLinkedin, FaBehance } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-
         {/* Coluna 1 - Sobre */}
         <div className="footer-column">
-          <h3>Stocker</h3>
+          <h3>TECHNUNES SOLUÇÕES EM TI</h3>
           <p>
-            Dolor amet sit justo amet elitr clita ipsum elitr est. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+            Somos uma empresa especializada em oferecer suporte tecnológico
+            eficiente, ágil e personalizado para pessoas físicas e empresas.
           </p>
         </div>
 
@@ -43,31 +43,35 @@ const Footer = () => {
 
         {/* Coluna 4 - Contato e Redes Sociais */}
         <div className="footer-column">
-          <h4>Contact Info</h4>
-          <p>Email: support@stocker.com</p>
-          <p>Phone: +55 11 99999-9999</p>
+          <h4>Informações de Contato</h4>
+          <p>Email: edvan.nunes@techunesti.com.br</p>
+          <p>Phone: +55 11 98214.2212</p>
           <p>Address: São Paulo - SP</p>
 
           {/* Redes sociais centralizadas */}
           <ul className="social-icons">
             <li>
-              <a href="https://fb.com/templatemo" target="_blank" rel="noreferrer">
-                <i className="fa fa-facebook"></i>
+              <a
+                href="https://fb.com/templatemo"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebook />
               </a>
             </li>
             <li>
               <a href="#" target="_blank" rel="noreferrer">
-                <i className="fa fa-twitter"></i>
+                <FaTwitter />
               </a>
             </li>
             <li>
               <a href="#" target="_blank" rel="noreferrer">
-                <i className="fa fa-linkedin"></i>
+                <FaLinkedin />
               </a>
             </li>
             <li>
               <a href="#" target="_blank" rel="noreferrer">
-                <i className="fa fa-behance"></i>
+                <FaBehance />
               </a>
             </li>
           </ul>
@@ -76,7 +80,7 @@ const Footer = () => {
 
       {/* Rodapé inferior */}
       <div className="footer-bottom">
-        <p>© 2025 Stocker. Todos os direitos reservados.</p>
+        <p>© 2025 ITWNS. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

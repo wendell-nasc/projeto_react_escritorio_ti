@@ -12,6 +12,7 @@ const ServicesHome = ({ services: propsServices }) => {
   
 
    return (
+    
     <div className="row g-4" style={{ marginTop: "80px", padding: "0 20px" }}>
       {services.length > 0 &&
         services.map((service, index) => (
@@ -28,7 +29,7 @@ const ServicesHome = ({ services: propsServices }) => {
                 <h4 className="service-title mb-3">{service.title}</h4>
                 <p className="service-description flex-grow-1 mb-4">{service.description}</p>
                 <a className="btn btn-primary rounded-pill py-2 px-4 mt-auto" href="#">
-                  Learn More
+                  Leia mais
                 </a>
               </div>
             </div>

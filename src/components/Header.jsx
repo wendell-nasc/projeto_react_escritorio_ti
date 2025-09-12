@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { servicesData as defaultServicesData } from "../data/servicesData";
 import { useState, useEffect } from "react";
-// import "./Header.css"; // importa o CSS
+import "./Header.css"; // importa o CSS
 
 const Header = ({ servicesData = defaultServicesData }) => {
   const location = useLocation();
@@ -60,41 +60,41 @@ const Header = ({ servicesData = defaultServicesData }) => {
 
                 <li className="scroll-to-section" onClick={handleLinkClick}>
                   {isHome ? (
-                    <a href="#services">Services</a>
+                    <a href="#services">Serviços</a>
                   ) : (
                     <Link to="/services" state={{ services: servicesData }}>
-                      Services
+                      Serviços
                     </Link>
                   )}
                 </li>
 
                 <li className="scroll-to-section" onClick={handleLinkClick}>
                   {isHome ? (
-                    <a href="#about">About</a>
+                    <a href="#about">Sobre</a>
                   ) : (
-                    <Link to="/about">About</Link>
+                    <Link to="/about">Sobre</Link>
                   )}
                 </li>
 
                 <li className="has-sub" onClick={handleLinkClick}>
-                  <a href="javascript:void(0)">Pages</a>
+                  <a href="javascript:void(0)">Páginas</a>
                   <ul className="sub-menu">
-                    <li><Link to="/about">About Us</Link></li>
-                    <li><Link to="/our-services">Our Services</Link></li>
-                    <li><Link to="/contact-us">Contact Us</Link></li>
+                    <li><Link to="/about">Sobre Nós</Link></li>
+                    <li><Link to="/our-services">Outros Serviços</Link></li>
+                    <li><Link to="/contact-us">Nosso Contatos</Link></li>
                   </ul>
                 </li>
 
                 <li className="scroll-to-section" onClick={handleLinkClick}>
                   {isHome ? (
-                    <a href="#testimonials">Testimonials</a>
+                    <a href="#testimonials">Depoimentos</a>
                   ) : (
-                    <Link to="/testimonials">Testimonials</Link>
+                    <Link to="/testimonials">Depoimentos</Link>
                   )}
                 </li>
 
                 <li onClick={handleLinkClick}>
-                  <Link to="/contact-us">Contact Support</Link>
+                  <Link to="/contact-us">Contato Suporte</Link>
                 </li>
               </ul>
 

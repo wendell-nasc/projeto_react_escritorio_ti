@@ -10,8 +10,25 @@ import { AboutUsPrincipal, Services, ServicesOur, Home,
     ContactUs, Banner, CTA, AboutUs, Calculator, Testimonials, Partners,
 ServicesHome, ServicesHomeDetail } from '../pages';
 
+
+
+// GOOGLE ADS E META FACEBOOK
+// import AdSenseHead from './google-ads/AdSenseHead';
+import { useGoogleAnalytics } from '../google-ads/useGoogleAnalytics';
+
           
 
+
+// 🌐 GOOGLE ANALYTCS
+const AppContentGoogleADS = () => {
+  useGoogleAnalytics(); // ✅ Analytics ativo
+
+  return (
+    <div className="App">
+      <AppRoutes />
+    </div>
+  );
+};
 
 export const AppRouter = () => {
 
@@ -39,7 +56,13 @@ export const AppRouter = () => {
     
 
         <Routes>
-            
+
+
+            {/* ✅ NOVA ROTA Google ADS */}
+           <Route path="*" element={<AppContentGoogleADS />} />
+
+
+
             {
                 ( status === 'not-authenticated')  
                     ? (

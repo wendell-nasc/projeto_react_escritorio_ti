@@ -8,9 +8,12 @@ import Footer from "./components/Footer";
 import FloatingButtons from "./components/FloatingButtons";
 
 
-// GOOGLE ADS
 import { HelmetProvider } from 'react-helmet-async';
-import AdSenseHead from './components/google-ads/AdSenseHead';
+
+// GOOGLE ADS E META FACEBOOK
+import AdSenseHead from './google-ads/AdSenseHead';
+
+
 
 
 const App = () => {

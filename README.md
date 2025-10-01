@@ -1,3 +1,17 @@
+
+# Encontrar o processo usando a porta 5173
+lsof -ti:5173
+
+# Matar o processo
+kill -9 $(lsof -ti:5173)
+
+# Ou force kill
+kill -9 $(lsof -ti:5173) 2>/dev/null || true
+
+
+
+
+
 # pacotes instalados
 npm install @reduxjs/toolkit axios date-fns dotenv emailjs-com react react-big-calendar react-dom react-redux react-router-dom react-slick slick-carousel sweetalert2
 

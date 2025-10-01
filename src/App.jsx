@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <HelmetProvider>
-    {/* <AdSenseHead />  */}
+    <AdSenseHead /> 
     <Provider store={ store }>
       
 

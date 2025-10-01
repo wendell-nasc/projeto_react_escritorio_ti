@@ -6,7 +6,11 @@ WORKDIR /app
 RUN apk add --no-cache python3 g++ make bash
 
 COPY package*.json ./
-RUN rm -rf dist node_modules package-lock.json && npm install
+
+#RUN rm -rf dist node_modules package-lock.json && npm install
+# Use legacy-peer-deps para ignorar conflitos de peer dependencies
+RUN rm -rf dist node_modules package-lock.json && npm install --legacy-peer-deps
+
 COPY . .
 COPY .env ./
 RUN npm run build

@@ -8,10 +8,17 @@ import Footer from "./components/Footer";
 import FloatingButtons from "./components/FloatingButtons";
 
 
+// GOOGLE ADS
+import { HelmetProvider } from 'react-helmet-async';
+import AdSenseHead from './components/google-ads/AdSenseHead';
+
+
 const App = () => {
 
 
   return (
+    <HelmetProvider>
+    {/* <AdSenseHead />  */}
     <Provider store={ store }>
       
 
@@ -23,6 +30,8 @@ const App = () => {
       <FloatingButtons />
       </BrowserRouter>
     </Provider>
+     </HelmetProvider>
+  
   )
 }
 

@@ -16,7 +16,12 @@ ServicesHome, ServicesHomeDetail } from '../pages';
 // import AdSenseHead from './google-ads/AdSenseHead';
 import { useGoogleAnalytics } from '../google-ads/useGoogleAnalytics';
 
-          
+
+
+
+
+
+
 
 
 // 🌐 GOOGLE ANALYTCS
@@ -60,6 +65,7 @@ export const AppRouter = () => {
 
             {/* ✅ NOVA ROTA Google ADS */}
            <Route path="*" element={<AppContentGoogleADS />} />
+        
 
 
 

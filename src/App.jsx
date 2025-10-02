@@ -14,6 +14,13 @@ import { HelmetProvider } from 'react-helmet-async';
 import AdSenseHead from './google-ads/AdSenseHead';
 
 
+//FACEBOOK META ADS
+import FacebookPixelInitializer from '.₢/facebook-ads/FacebookPixelInitializer';
+
+
+
+
+
 
 
 const App = () => {
@@ -28,6 +35,8 @@ const App = () => {
       <BrowserRouter>
       
       <Header /> 
+      {/* ✅ FacebookPixelInitializer FORA do Routes */}
+        <FacebookPixelInitializer />
         <AppRouter />
       <Footer />
       <FloatingButtons />

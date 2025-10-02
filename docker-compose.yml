@@ -6,4 +6,5 @@ services:
     ports:
       - "5000:80"
     # Política de reinicialização automática
-    restart: unless-stopped
+    restart: on-failure
+

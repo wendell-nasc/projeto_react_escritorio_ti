@@ -15,7 +15,7 @@ import AdSenseHead from './google-ads/AdSenseHead';
 
 
 //FACEBOOK META ADS
-import FacebookPixelInitializer from '.₢/facebook-ads/FacebookPixelInitializer';
+import FacebookPixelInitializer from './facebook-ads/FacebookPixelInitializer';
 
 
 
